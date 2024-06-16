@@ -1,0 +1,95 @@
+{
+    "excel": [
+        "csv",
+        "xls",
+        "xlsx"
+    ],
+    "word": [
+        "doc",
+        "docx",
+        "rtf"
+    ],
+    "webpage": [
+        "html",
+        "htm"
+    ],
+    "database": [
+        "db"
+    ],
+    "python": [
+        "pyc",
+        "py"
+    ],
+    "textcode": [
+        "css",
+        "map",
+        "js",
+        "txt",
+        "xml"
+    ],
+    "log": [
+        "log"
+    ],
+    "link": [
+        "lnk"
+    ],
+    "code": [
+        "c",
+        "cpp",
+        "java",
+        "cmd"
+    ],
+    "audio": [
+        "mp3",
+        "mp2",
+        "aac",
+        "wav",
+        "amr"
+    ],
+    "video": [
+        "mp4",
+        "avi",
+        "mkv",
+        "mov",
+        "ts"
+    ],
+    "pdf": [
+        "pdf"
+    ],
+    "archive": [
+        "rar",
+        "7z",
+        "zip"
+    ],
+    "powerpoint": [
+        "pptx",
+        "ppt"
+    ],
+    "configuration": [
+        "inf",
+        "ini",
+        "dll",
+        "tmp",
+        "config",
+        "conf",
+        "efi"
+    ],
+    "executable": [
+        "exe",
+        "msi"
+    ],
+    "diskimage": [
+        "iso",
+        "bin",
+        "dmg"
+    ],
+    "image": [
+        "png",
+        "gif",
+        "jpg",
+        "jpeg",
+        "bmp",
+        "ico",
+        "svg"
+    ]
+}

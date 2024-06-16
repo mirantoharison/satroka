@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/fontpoppins/poppins.css" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./css/receive.css" />
+    <script src="./scripts/socket.io.min.js"></script>
+    <script defer src="./scripts/main.js"></script>
+    <script defer src="./scripts/file-receive.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="user-info">
+            <div class="connection-information">
+                <img class="avatar" src="" />
+                <span class="user-info-element username"></span>
+            </div>
+            <p>
+                Les informations suivantes, votre adresse IP et le port de communication de l'application, seront
+                visibles depuis le serveur auquel vous vous êtes connecté. Utiliser
+                les champs correspondants pour juste en dessous pour specifier les adresses du serveur concerné.
+            </p>
+            <div class="user-info-container">
+                <div class="user-info-element">
+                    <label>Adresse IP</label>
+                    <input type="text" name="address" readonly />
+                </div>
+                <div class="user-info-element">
+                    <label>Port de communication</label>
+                    <input type="text" name="port" readonly />
+                </div>
+            </div>
+        </div>
+        <section class="download-section">
+            <div class="server-detail-container">
+                <div class="server-detail">
+                    <div class="server-detail-item">
+                        <label>Adresse IP du serveur</label>
+                        <input type="text" name="server-ip" value="127.0.0.1" />
+                    </div>
+                    <div class="server-detail-item">
+                        <label>Port utilisé par le serveur</label>
+                        <input type="text" name="server-port" />
+                    </div>
+                </div>
+                <button name="connect">Se connecter</button>
+            </div>
+            <div class="download-item-container">
+                <!--<div class="download-item">
+                    <img src="./assets/files/ae.png" />
+                    <div>
+                        <span class="colspan filename">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+                            quae.</span>
+                        <span class="colspan filepath">
+                            C://Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, autem non itaque
+                            minus voluptates quaerat sunt maiores dolores numquam aspernatur!
+                        </span>
+                    </div>
+                    <div>
+                        <span class="title">Taille du fichier :</span>
+                        <span class="value">159.57Mo</span>
+                        <span class="title">Taille téléchargée :</span>
+                        <span class="value">108.22Mo</span>
+                    </div>
+                    <div>
+                        <span class="title">Date de création du fichier :</span>
+                        <span class="value">00/00/0000 00:00:00</span>
+                        <span class="title">Date de modification du fichier :</span>
+                        <span class="value">00/00/0000 00:00:00</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="bar-container">
+                            <div class="processed"></div>
+                        </div>
+                        <span>77.5%</span>
+                        <span>60.54Ko</span>
+                    </div>
+                </div>-->
+                <div class="download-item empty">
+                    <i class="fa fa-parachute-box"></i>
+                    <h1>Aucun téléchargement en cours</h1>
+                    <p>Vérifier que votre connexion fonctionne correctement et que vous êtes connecté à un serveur. Dans
+                        le cas où tout est correct, patientez jusqu'à ce que le serveur envoie des fichiers.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

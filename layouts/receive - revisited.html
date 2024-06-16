@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/fontpoppins/poppins.css" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./css/receive.css" />
+    <script src="./scripts/socket.io.min.js"></script>
+    <script defer src="./scripts/main.js"></script>
+    <script defer src="./scripts/file-receive.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="user-info">
+            <div class="connection-information">
+                <img class="avatar" src="" />
+            </div>
+            <p>
+                <span class="user-info-element username"></span>
+                Vous pouvez utiliser le bouton suivant pour démarrer ou arrêter votre serveur. Notez que c'est ce
+                serveur qui vous permet d'envoyer ou de recevoir des fichiers venant d'autres ordinateurs. Communiquez
+                les informations suivantes en guise de contact à votre correspondant
+                afin que les fichiers seront immédiatement envoyé à son ordinateur.
+            </p>
+            <div class="user-info-container">
+                <div>
+                    <div class="user-info-element">
+                        <label>Adresse IP</label>
+                        <input type="text" name="address" readonly />
+                    </div>
+                    <div class="user-info-element">
+                        <label>Port de communication</label>
+                        <input type="text" name="port" readonly />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="download-section">
+            <div class="history">
+                <div class="history-control-container">
+                    <button class="refresh" title="Actualiser l'historique"><i class="fa fa-redo"></i></button>
+                    <button class="truncate" title="Effacer la liste de l'historique"><i
+                            class="fa fa-trash-alt"></i></button>
+                </div>
+                <div class="history-list">
+                    <!--<div class="empty">
+                            <div>
+                                <i class="fa fa-search"></i>
+                                <h3>Aucune historique</h3>
+                                <p>Pour l'instant, votre historique est totalement vide. Mais ne vous inquiétez pas,
+                                    celle-ci se remplirait à vue d'oeil, à chaque évènement.</p>
+                            </div>
+                        </div>-->
+                    <div class="history-group">
+                        <div class="history-group-label">
+                            <span>Aujourd'hui</span>
+                            <i class="fa fa-angle-right toggle-button" data-search-label="now"></i>
+                        </div>
+                        <div class="history-group-list"></div>
+                    </div>
+                    <div class="history-group">
+                        <div class="history-group-label">
+                            <span>Cette semaine</span>
+                            <i class="fa fa-angle-right toggle-button" data-search-label="week"></i>
+                        </div>
+                        <div class="history-group-list"></div>
+                    </div>
+                    <div class="history-group">
+                        <div class="history-group-label">
+                            <span>Ce mois</span>
+                            <i class="fa fa-angle-right toggle-button" data-search-label="month"></i>
+                        </div>
+                        <div class="history-group-list">
+                            <!--<div class="history-item">
+                                <div class="remove"><button><i class="fa fa-times"></i></button></div>
+                                <div class="icon"><img src="./assets/icons/folder.svg" /></div>
+                                <div class="name"><span>Dossier 1 avec un nom très très très très très très
+                                        long</span>
+                                </div>
+                                <div class="date">10:25</div>
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="history-group">
+                        <div class="history-group-label">
+                            <span>Cette année</span>
+                            <i class="fa fa-angle-right toggle-button" data-search-label="year"></i>
+                        </div>
+                        <div class="history-group-list"></div>
+                    </div>
+                    <div class="history-group">
+                        <div class="history-group-label">
+                            <span>Plus anciens</span>
+                            <i class="fa fa-angle-right toggle-button" data-search-label="old"></i>
+                        </div>
+                        <div class="history-group-list"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="download">
+                <div class="server">
+                    <div class="server-detail">
+                        <div class="server-detail-item">
+                            <label>Adresse IP du serveur</label>
+                            <input type="text" name="server-ip" value="127.0.0.1" />
+                        </div>
+                        <div class="server-detail-item">
+                            <label>Port utilisé par le serveur</label>
+                            <input type="text" name="server-port" />
+                        </div>
+                    </div>
+                    <button name="connect">Se connecter</button>
+                </div>
+                <div class="path-container">
+                    <div class="control">
+                        <button class="root" title="Afficher la liste des lecteurs"><i
+                                class="fa fa-folder"></i></button>
+                        <button class="parent" title="Afficher l'élément parent"><i class="fa fa-reply"></i></button>
+                    </div>
+                    <input class="path" readonly />
+                    <div class="control">
+                        <button class="create"><i class="fa fa-plus"></i></button>
+                        <button class="choose" title="Choisir ce dossier comme destination pour les téléchargement"><i
+                                class="fa fa-save"></i>Enregistrer</button>
+                    </div>
+                </div>
+                <div class="operation-container">
+                    <div class="operation-option">
+                        <select class="filter-parameter">
+                            <option value="name">Nom</option>
+                            <option value="ctime">Date de création</option>
+                            <option value="mtime">Date de modification</option>
+                            <option value="size">Taille</option>
+                        </select>
+                        <button class="sort-up sort-button active" data-value="1"><i
+                                class="fa fa-sort-alpha-up"></i></button>
+                        <button class="sort-down sort-button" data-value="-1"><i
+                                class="fa fa-sort-alpha-down"></i></button>
+                        <button class="filter-button">Filtrer</button>
+                    </div>
+                    <div class="operation-option">
+                        <input type="text" class="search-text" />
+                        <button class="search-button"><i class="fa fa-search"></i></button>
+                        <div class="operation-subdivisiary"></div>
+                        <button class="page-previous" title="Afficher la page précédente de la recherche"><i
+                                class="fa fa-caret-left"></i></button>
+                        <input type="number" min="1" max="999" value="1" class="page-current"
+                            title="Page en cours d'affichage" readonly />
+                        <button class="page-next" title="Afficher la page suivante de la recherche"><i
+                                class="fa fa-caret-right"></i></button>
+                    </div>
+                </div>
+                <div class="browse-folder">
+                    <table>
+                        <tbody>
+                            <tr class="folder-item empty">
+                                <td>
+                                    <i class=" fa fa-parachute-box"></i>
+                                    <h3>Aucun élément à afficher dans ce dossier</h3>
+                                    <p>Nous n'avons trouvé aucun élément dans ce dossier. Parcourez d'autres afin de
+                                        séléctionner des fichier à partager avec vos contacts.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="status-container">test</div>
+                <div class="download-item-container">
+                    <table>
+                        <tbody>
+                            <!--<tr class="empty not-empty">
+                                <td>
+                                    <i class=" fa fa-parachute-box"></i>
+                                    <h3>Aucun élément à afficher dans ce dossier</h3>
+                                    <p>Nous n'avons trouvé aucun élément dans ce dossier. Parcourez d'autres afin de
+                                        séléctionner des fichier à partager avec vos contacts.</p>
+                                </td>
+                            </tr>-->
+                            <tr class="download-item">
+                                <td class="remove"><button><i class="fa fa-times"></i></button></td>
+                                <td class="action">
+                                    <button><i class="fa fa-pause"></i></button>
+                                    <button><i class="fa fa-stop"></i></button>
+                                </td>
+                                <td class="icon"><img class="file-icon" src="./assets/icons/pdf.svg" /></td>
+                                <td class="name"><span>miranto.pdf</span></td>
+                                <td class="percent"><span>50%</span></td>
+                                <td class="progress">
+                                    <div class="progress-all">
+                                        <div class="progress-done"></div>
+                                    </div>
+                                </td>
+                                <td class="size transfered"><span>108.96Mo</span></td>
+                                <td class="size total"><span>574.26Mo</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="history-detail"></div>
+        </section>
+    </main>
+</body>
+
+</html>

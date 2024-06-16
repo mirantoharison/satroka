@@ -1,0 +1,107 @@
+@import "./main";
+
+:root {
+    --shadow-tone: #35353526;
+}
+
+* {
+    font-family: var(--default-font-family);
+    font-size: var(--default-font-size);
+    color: var(--default-font-color);
+}
+
+main {
+    @include fit-container;
+
+    display: flex;
+    flex-direction: column;
+
+    --upload-section-width: 55%;
+    --download-section-width: 55%;
+    --history-section-width: 20%;
+    --section-gap: 10px;
+    --container-padding: 10px;
+    --user-section-width: calc(100% - var(--section-gap) * 2 - var(--upload-section-width) - var(--history-section-width));
+    --history-detail-section-width: calc(100% - var(--section-gap) *2 - var(--download-section-width) - var(--history-section-width));
+
+    .user-info {
+        display: grid;
+        grid-template-columns: 90px auto;
+        grid-column-gap: 20px;
+        grid-row-gap: 5px;
+        position: relative;
+        margin-bottom: 15px;
+        width: 100%;
+        height: fit-content;
+        box-sizing: border-box;
+        background-color: #2b2c2e;
+        align-items: flex-start;
+
+        * {
+            color: #ffffff;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            height: 5px;
+            width: 100%;
+            background-image: var(--gradient-image);
+        }
+
+        .connection-information {
+            display: inherit;
+            align-items: center;
+            padding: 10px 0 0 10px;
+
+            img {
+                @include reset-box;
+
+                width: 80px;
+                background-color: #9f9f9f29;
+                border: 1px solid;
+                border-top-color: #9f9f9f42;
+                border-left-color: #9f9f9f42;
+                border-right-color: #9f9f9fa6;
+                border-bottom-color: #9f9f9fa6;
+                padding: 5px;
+            }
+        }
+
+        .user-info-container {
+            display: inherit;
+            column-gap: 10px;
+            justify-content: flex-start;
+            flex-grow: 1;
+            padding: 10px;
+            border-top: 1px solid #9f9f9f42;
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+            input {
+                padding: 2px 10px;
+                background-color: transparent;
+                border: 1px solid #9f9f9f42;
+            }
+        }
+
+        p {
+            @include reset-box;
+            padding: 10px 10px 0 0;
+            width: 70%;
+
+            span {
+                font-size: calc(var(--default-font-size) * 1.5);
+                font-weight: bolder;
+                border-bottom: 3px double #9f9f9f42;
+                display: block;
+                width: 100%;
+                padding-bottom: 5px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

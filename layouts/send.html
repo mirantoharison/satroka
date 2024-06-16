@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/fontpoppins/poppins.css" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./css/send.css" />
+    <script src="./scripts/socket.io.min.js"></script>
+    <script defer src="./scripts/main.js"></script>
+    <script defer src="./scripts/file-send.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="user-info">
+            <div class="connection-information">
+                <img class="avatar" src="" />
+                <span class="user-info-element username"></span>
+            </div>
+            <p>
+                Vous pouvez utiliser le bouton suivant pour démarrer ou arrêter votre serveur. Notez que c'est ce
+                serveur qui vous permet d'envoyer ou de recevoir des fichiers venant d'autres ordinateurs. Communiquez
+                les informations suivantes en guise de contact à votre correspondant
+                afin que les fichiers seront immédiatement envoyé à son ordinateur.
+            </p>
+            <div class="user-info-container">
+                <div>
+                    <div class="user-info-element">
+                        <label>Adresse IP</label>
+                        <input type="text" name="address" readonly />
+                    </div>
+                    <div class="user-info-element">
+                        <label>Port de communication</label>
+                        <input type="text" name="port" readonly />
+                    </div>
+                </div>
+                <button class="start-server">Démarrer</button>
+            </div>
+        </div>
+        <section class="upload-section">
+            <div class="upload">
+                <div class="upload-detail-container">
+                    <div class="upload-detail">
+                        <div class="upload-detail-element">
+                            <span class="title">Taille totale :</span>
+                            <span class="value count">---</span>
+                        </div>
+                        <div class="upload-detail-element">
+                            <span class="title">Nb de fichiers :</span>
+                            <span class="value size">---</span>
+                        </div>
+                    </div>
+                    <div class="upload-control">
+                        <button class="reset-list"><i class="fa fa-trash-alt"></i></button>
+                        <button class="add-list"><i class="fa fa-plus"></i></button>
+                        <span class="separator"></span>
+                        <button class="list-view"><i class="fa fa-list-alt"></i></button>
+                        <button class="folder-view"><i class="fa fa-folder"></i></button>
+                        <span class="separator"></span>
+                        <button class="sort-list"><i class="fa fa-sort-alpha-up"></i></button>
+                    </div>
+                </div>
+                <div class="upload-item-container list">
+                    <div class="upload-item empty">
+                        <i class="fa fa-cloud"></i>
+                        <h1>Aucun fichier à téléverser pour le moment</h1>
+                        <p>Pour ajouter des éléments à la liste de téléversement, cliquer sur le bouton avec l'icone "<i
+                                class="fa fa-plus"></i>"</p>
+                    </div>
+                    <!--<div class="upload-item">
+                        <div class="icon-wrapper">
+                            <img src="./assets/files/7z.png" alt="Icone du fichier" />
+                        </div>
+                        <span class="name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
+                            veritatis..extension</span>
+                        <span class="size">10.86Mo</span>
+                        <button><i class="fa fa-times"></i><span>Enlever</span></button>
+                    </div>
+                    <div class="upload-item">
+                        <div class="icon-wrapper">
+                            <img src="./assets/files/7z.png" alt="Icone du fichier" />
+                        </div>
+                        <span class="name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
+                            veritatis..extension</span>
+                        <span class="size">10.86Mo</span>
+                        <button><i class="fa fa-times"></i><span>Enlever</span></button>
+                    </div>
+                    <div class="upload-item">
+                        <div class="icon-wrapper">
+                            <img src="./assets/files/7z.png" alt="Icone du fichier" />
+                        </div>
+                        <span class="name">Lorem dsqd sqdsqdqsd qsd qsd qsd qsd sqdipsum dolor sit amet consectetur
+                            adipisicing elit. Modi,
+                            veritatis..extension</span>
+                        <span class="size">10.86Mo</span>
+                        <button><i class="fa fa-times"></i><span>Enlever</span></button>
+                    </div>-->
+                </div>
+                <div class="upload-start-button">
+                    <button><i class="fa fa-play"></i></button>
+                </div>
+            </div>
+            <div class="address">
+                <!--<div class="upload-user-share">
+                    <div class="icon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <span class="address">127.0.0.1:5000</span>
+                    <span class="name">RANDRIAMAMPIANINA Miranto Harison Lorem ipsum dolor, sit amet consectetur
+                        adipisicing elit. Tenetur, dicta?</span>
+                </div>-->
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
